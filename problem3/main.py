@@ -1,4 +1,7 @@
 def playing_domino(cards, deck):
+    for card in cards:
+        if deck [0] in card or deck[1] in card:
+            return card
     return []
 
 if __name__ == "__main__":

@@ -1,5 +1,17 @@
 def maximum_buy_product(money, product_price):
-    return 0
+    product_price.sort() 
+
+    n = len(product_price)
+    indeks = set()
+    count = 0
+
+    for x in range(n):
+        if x not in indeks and money >= product_price[x]:
+            money -= product_price[x]
+            count += 1
+            indeks.add(x)
+
+    return count
 
 if __name__ == "__main__":
     print(maximum_buy_product(50000, [25000, 25000, 10000, 14000]))      # 3
